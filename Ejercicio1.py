@@ -1,3 +1,5 @@
+import datetime
+
 def fibonacciBucle(n):
     '''
     Función que recibe u número entero positivo n 
@@ -7,6 +9,7 @@ def fibonacciBucle(n):
     - Salida: número de fibonacci asociado al parámetro n introducido.
   
     '''
+
     a = 0
     b = 1
     
@@ -20,20 +23,36 @@ def fibonacciBucle(n):
             a = b
             b = c
         return c
+    
+start_time = datetime.datetime.now()
 
+fibonacciBucle(40)
 
+end_time = datetime.datetime.now()
 
-# Escribir dos funciones, una función que reciba un 
-# número entero positivo n y calcule el número de 
-# fibonacci asociado a ese número de manera recursiva 
-# y otra función que haga la misma operación pero con bucles.
-# Con ambas funciones, calcular y comparar el tiempo de 
-# ejecución para n = (1, 10, 20, 30 y 40) por fuerza bruta.
+print('El tiempo de ejecución es:', end_time - start_time)
+
 
 def fibonacciRecursive(n):
+    '''
+    Función que recibe u número entero positivo n 
+    y calcula el número de fibonacci asociado a ese número.
+   
+    - Parámetro = n: número entero positivo.
+    - Salida: número de fibonacci asociado al parámetro n introducido.
+  
+    '''
+
     if n == 0:
         return 0
     elif n == 1:
         return 1
     return fibonacciRecursive(n-1) + fibonacciRecursive(n-2)
-print(fibonacciRecursive(3))
+
+start_time = datetime.datetime.now()
+
+fibonacciRecursive(40)
+
+end_time = datetime.datetime.now()
+
+print('El tiempo de ejecución es:', end_time - start_time)
